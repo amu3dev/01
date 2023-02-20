@@ -1,7 +1,14 @@
 //import ExpenseItem from "./components/ExpenseItem";
-import ExpenseItems from "./components/Expenses/Expenses";
+//import Incrementer from "./components/Example/Incrementer";
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 function App() {
-  return <ExpenseItems />;
+  return (
+    <>
+      <NewExpense />
+      <Expenses />
+    </>
+  );
 }
 
 export default App;
