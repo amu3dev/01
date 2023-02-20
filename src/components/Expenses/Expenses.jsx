@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 import "./expenses.css";
 const expenses = getExpenses();
 
-const ExpenseItems = () => {
+const Expenses = () => {
   return (
     <Card className="expenses">
       {expenses.map((expense) => (
@@ -20,4 +20,4 @@ const ExpenseItems = () => {
     </Card>
   );
 };
-export default ExpenseItems;
+export default Expenses;
