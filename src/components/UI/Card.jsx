@@ -1,9 +1,9 @@
 import React from "react";
-import "./card.css";
+import "../../css/Card.css";
 
 const Card = (props) => {
   const classes = props.className;
-  console.log(classes);
+  // console.log(classes);
   return <div className={"u3_card " + classes}>{props.children}</div>;
 };
 
