@@ -3,10 +3,7 @@ import ExpenseItem from "./ExpenseItem";
 
 import "../../css/ExpensesList.css";
 
-const ExpensesList = ({ filteredYear, expenses }) => {
-  const filteredExpenses = expenses.filter((expense) => {
-    return expense.date.getFullYear().toString() === filteredYear;
-  });
+const ExpensesList = ({ filteredYear, expenses, filteredExpenses }) => {
   return (
     <div className="expenses-list">
       {!filteredYear &&
