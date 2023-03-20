@@ -6,8 +6,16 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-  const expensesItems = getExpenses();
+  const savedExpenses = localStorage.getItem("expenses") || null;
 
+  const expensesItems = savedExpenses
+    ? JSON.parse(savedExpenses)
+    : getExpenses();
+  // const expensesItems = getExpenses();
+
+  expensesItems.map((item) => {
+    return (item.date = new Date(item.date));
+  });
   const [expenses, setExpenses] = useState(expensesItems);
 
   const handelSaveExpenseData = (newAddedExpense) => {
@@ -18,6 +26,10 @@ function App() {
     };
 
     setExpenses((prevExpenses) => {
+      localStorage.setItem(
+        "expenses",
+        JSON.stringify([newExpenseData, ...prevExpenses])
+      );
       return [newExpenseData, ...prevExpenses];
     });
   };
